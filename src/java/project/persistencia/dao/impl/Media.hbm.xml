@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-ene-2021 14:58:06 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="project.model.Media" table="media" catalog="proyectodb" optimistic-lock="version">
+        <id name="idMedia" type="int">
+            <column name="idMedia" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="basicdata" class="project.model.Basicdata" fetch="select">
+            <column name="idBasicdata" not-null="true" />
+        </many-to-one>
+        <property name="url" type="string">
+            <column name="url" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
