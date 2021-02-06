@@ -10,12 +10,14 @@ import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import project.model.Basicdata;
 import project.model.Media;
 import project.persistencia.dao.MediaDAO;
 
@@ -23,6 +25,7 @@ import project.persistencia.dao.MediaDAO;
  *
  * @author Lorenzo González
  */
+@MultipartConfig
 @Controller
 public class MediaController {
 
@@ -77,7 +80,7 @@ public class MediaController {
         try {
             media = mediaDAO.create();
             media.setUrl(request.getParameter("url"));
-            
+            media.setBasicdata((Basicdata) request.getAttribute("idBasicData"));
 
             mediaDAO.saveOrUpdate(media);
 

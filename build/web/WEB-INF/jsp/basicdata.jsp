@@ -62,7 +62,7 @@
 
                             <div class="form-group">
                                 <label class="control-label" for="web">Web:</label>
-                                <input class="form-control" id="ape2" type="text" name="ape2" value="${basicdata.web}" >
+                                <input class="form-control" id="web" type="text" name="web" value="${basicdata.web}" >
                             </div>
                         </fieldset>
 

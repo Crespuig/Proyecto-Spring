@@ -11,6 +11,7 @@ import project.persistencia.dao.BasicdataDAO;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ import project.model.Basicdata;
  *
  * @author Lorenzo González
  */
+@MultipartConfig
 @Controller
 public class BasicdataController {
 

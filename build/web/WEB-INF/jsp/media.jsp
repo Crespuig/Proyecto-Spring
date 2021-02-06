@@ -46,17 +46,17 @@
                     <form action="<%=urlAction%>" method="post" >
                         <fieldset>
                             <div class="form-group">
-                                <label class="control-label" for="id">Id:</label>
+                                <label class="control-label" for="idMedia">IdMedia:</label>
                                 <input class="form-control disabled " id="idMedia" name="idMedia" type="text" value="${media.idMedia}" readonly="readonly">
                             </div>
                             
                             <div class="form-group">
-                                <label class="control-label" for="id">Id:</label>
-                                <input class="form-control disabled " id="idBasicData" name="idBasicdata" type="text" value="${media.getBasicdata().idBasicData}">
+                                <label class="control-label" for="idBasicData">IdBasicdata:</label>
+                                <input class="form-control disabled " id="idBasicData" name="idBasicData" type="text" value="${media.getBasicdata().idBasicData}">
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label" for="nombre">Url</label>
+                                <label class="control-label" for="url">Url</label>
                                 <input class="form-control" id="url" type="text" name="url" value="${media.url}" >
                             </div>
 
