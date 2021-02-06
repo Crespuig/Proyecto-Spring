@@ -98,7 +98,7 @@
                                                         <th>Borrar</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
+                                                <tbody style="background:#BDBDBD">
                                                     <!-- Per cada film es crea una row en la tabla -->
                                                     <%
                                                         for (Media m : mediasLista) {
