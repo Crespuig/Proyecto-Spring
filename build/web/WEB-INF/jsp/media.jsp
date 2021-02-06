@@ -52,7 +52,7 @@
                             
                             <div class="form-group">
                                 <label class="control-label" for="idBasicData">IdBasicdata:</label>
-                                <input class="form-control disabled " id="idBasicData" name="idBasicData" type="text" value="${media.getBasicdata().idBasicData}">
+                                <input class="form-control disabled " id="idBasicdata" name="idBasicdata" type="text" value="${media.getBasicdata().idBasicData}">
                             </div>
 
                             <div class="form-group">

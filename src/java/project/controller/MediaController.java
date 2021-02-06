@@ -77,10 +77,11 @@ public class MediaController {
         request.setCharacterEncoding("UTF-8");
 
         Media media = null;
+        
         try {
             media = mediaDAO.create();
             media.setUrl(request.getParameter("url"));
-            media.setBasicdata((Basicdata) request.getAttribute("idBasicData"));
+            media.setBasicdata((Basicdata) request.getAttribute("basicdata"));
 
             mediaDAO.saveOrUpdate(media);
 

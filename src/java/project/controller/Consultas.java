@@ -11,24 +11,40 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.engine.jdbc.connections.spi.ConnectionProvider;
+import org.hibernate.service.ServiceRegistry;
+import org.hibernate.service.ServiceRegistryBuilder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
  * @author HECTOR
  */
 @Controller
-public class ConsultasController {
+@ResponseBody
+public class Consultas extends HibernateUtil {
 
-    @RequestMapping({"/consultas.html"})
+    @RequestMapping({"/index.html"})
     public boolean autentication(String usuario, String password) throws SQLException {
         PreparedStatement pst = null;
         ResultSet rs = null;
-        Connection con = null;
+
         try {
             String consulta = "SELECT * FROM usuarios WHERE usuario = ? and password = ?";
-
+            
+            Configuration configuration = new Configuration();
+            configuration.configure();
+            ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
+            SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+             
+            Connection con = sessionFactory.getSessionFactoryOptions().getServiceRegistry().getService(ConnectionProvider.class).getConnection();
+                    
             pst = con.prepareStatement(consulta);
             pst.setString(1, usuario);
             pst.setString(2, password);
@@ -62,10 +78,15 @@ public class ConsultasController {
     public boolean registrar(String usuario, String nombre, String apellidos, String password) throws SQLException {
 
         PreparedStatement pst = null;
-        Connection con = null;
         
         try {
             String consulta = "INSERT INTO usuarios (usuario, nombre, apellidos, password) values(?, ?, ?, ?)";
+            Configuration configuration = new Configuration();
+            configuration.configure();
+            ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
+            SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+            Connection con = sessionFactory.getSessionFactoryOptions().getServiceRegistry().getService(ConnectionProvider.class).getConnection();
+           
             pst = con.prepareStatement(consulta);
             pst.setString(1, usuario);
             pst.setString(2, usuario);

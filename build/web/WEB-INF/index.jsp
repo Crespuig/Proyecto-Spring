@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script type="text/javascript"  src="<%=request.getContextPath()%>/js/jquery-1.9.0.js"></script>
         <script type="text/javascript"  src="<%=request.getContextPath()%>/js/bootstrap.js" ></script>
+        <script src="js/main.js"></script>
         <title>Iniciar sesión</title>
     </head>
     <body style="background:#FDFDFD">
@@ -26,19 +27,19 @@
             </div>
             <div class="col-sm">
                 <h1>Iniciar sesión</h1>
-                <form action="<%=urlAction%>" method="post">
+                <form action="<%=urlAction%>" method="post" id="formInicio">
                     <fieldset>
                         <div class="form-group">
                             <label class="control-label" for="nombre">Usuario:</label>
-                            <input class="form-control" id="usuario" type="text" name="usuario" value="${usuario.usuario}"/><br>
+                            <input class="form-control" id="txtUsuario" type="text" name="usuario" value="${usuario.usuario}"/><br>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="password">Contraseña:</label>
-                            <input class="form-control" id="password" type="text" name="password" value="${usuario.password}"/><br>
+                            <input class="form-control" id="txtPassword" type="password" name="password" value="${usuario.password}"/><br>
                         </div>
                     </fieldset>
                     <div class="form-actions">
-                        <input type="submit" value="Iniciar Sesión"/>
+                        <input type="button" value="Iniciar Sesión" id="btnIniciarSesion"/>
                     </div>
                         No tienes una cuenta... <a href="registro.jsp">Registrarme</a>
                 </form>
