@@ -31,11 +31,11 @@
                     <fieldset>
                         <div class="form-group">
                             <label class="control-label" for="nombre">Usuario:</label>
-                            <input class="form-control" id="txtUsuario" type="text" name="usuario" value="${usuario.usuario}"/><br>
+                            <input class="form-control" id="txtUsuario" type="text" name="usuario" "/><br>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="password">Contraseña:</label>
-                            <input class="form-control" id="txtPassword" type="password" name="password" value="${usuario.password}"/><br>
+                            <input class="form-control" id="txtPassword" type="password" name="password" "/><br>
                         </div>
                     </fieldset>
                     <div class="form-actions">

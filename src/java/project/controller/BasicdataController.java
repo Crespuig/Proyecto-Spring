@@ -31,7 +31,7 @@ public class BasicdataController {
     @Autowired
     private BasicdataDAO basicdataDAO;
 
-    @RequestMapping({"/index.html"})
+    @RequestMapping({"/basicdata.html"})
     public ModelAndView read(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> model = new HashMap<String, Object>();
         String viewName;

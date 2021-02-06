@@ -27,10 +27,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @author HECTOR
  */
 @Controller
-@ResponseBody
 public class Consultas extends HibernateUtil {
 
-    @RequestMapping({"/consultas.html"})
     public boolean autentication(String usuario, String password) throws SQLException {
         PreparedStatement pst = null;
         ResultSet rs = null;
