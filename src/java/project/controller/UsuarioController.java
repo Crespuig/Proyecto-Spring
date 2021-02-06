@@ -84,7 +84,7 @@ public class UsuarioController {
 
             usuarioDao.saveOrUpdate(usuario);
 
-            viewName = "redirect:/index.html";
+            viewName = "redirect:/usuario.html";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
             model.put("backURL", request.getContextPath() + "/index.html");
@@ -141,7 +141,7 @@ public class UsuarioController {
 
             usuarioDao.saveOrUpdate(usuario);
 
-            viewName = "redirect:/index.html";
+            viewName = "redirect:/usuario.html";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
             model.put("backURL", request.getContextPath() + "/index.html");
@@ -194,7 +194,7 @@ public class UsuarioController {
 
             usuarioDao.delete(id);
 
-            viewName = "redirect:/index.html";
+            viewName = "redirect:/usuario.html";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
             model.put("usuario", usuario);

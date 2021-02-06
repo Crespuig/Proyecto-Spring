@@ -85,7 +85,7 @@ public class BasicdataController {
 
             basicdataDAO.saveOrUpdate(basicdata);
 
-            viewName = "redirect:/index.html";
+            viewName = "redirect:/basicdata.html";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
             model.put("backURL", request.getContextPath() + "/index.html");
@@ -141,7 +141,7 @@ public class BasicdataController {
 
             basicdataDAO.saveOrUpdate(basicdata);
 
-            viewName = "redirect:/index.html";
+            viewName = "redirect:/basicdata.html";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
             model.put("backURL", request.getContextPath() + "/index.html");
@@ -194,7 +194,7 @@ public class BasicdataController {
 
             basicdataDAO.delete(id);
 
-            viewName = "redirect:/index.html";
+            viewName = "redirect:/basicdata.html";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
             model.put("basicdata", basicdata);

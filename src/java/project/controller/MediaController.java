@@ -85,7 +85,7 @@ public class MediaController {
 
             mediaDAO.saveOrUpdate(media);
 
-            viewName = "redirect:/index.html";
+            viewName = "redirect:/media.html";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
             model.put("backURL", request.getContextPath() + "/index.html");
@@ -140,7 +140,7 @@ public class MediaController {
 
             mediaDAO.saveOrUpdate(media);
 
-            viewName = "redirect:/index.html";
+            viewName = "redirect:/media.html";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
             model.put("backURL", request.getContextPath() + "/index.html");
@@ -193,7 +193,7 @@ public class MediaController {
 
             mediaDAO.delete(id);
 
-            viewName = "redirect:/index.html";
+            viewName = "redirect:/media.html";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
             model.put("media", media);
