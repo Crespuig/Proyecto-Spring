@@ -1,11 +1,11 @@
+<%@page import="java.util.List"%>
 <%@page import="project.model.Usuario"%>
 <%@page import="org.springframework.web.util.HtmlUtils"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="project.controller.FormOperation"%>
 
 <%
-    FormOperation formOperation = (FormOperation) request.getAttribute("formOperation");
-    String labelButton = null;
+    List<Usuario> usuarios = (List<Usuario>) request.getAttribute("usuarios");
     String urlAction = null;
 %>    
 

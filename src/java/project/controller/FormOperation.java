@@ -11,6 +11,6 @@ package project.controller;
  */
 public enum FormOperation {
     
-    Update, Insert, Delete
+    Update, Insert, Delete, Login
     
 }

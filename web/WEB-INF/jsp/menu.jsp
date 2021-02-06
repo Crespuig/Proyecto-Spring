@@ -4,13 +4,10 @@
     Author     : HECTOR
 --%>
 
+<%@page import="project.model.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    HttpSession objSession = request.getSession(false);
-    String usuario = (String) objSession.getAttribute("usuario");
-    if (usuario.equals("")) {
-            response.sendRedirect("inicio.jsp");
-    }
+    Usuario usuario = (Usuario) request.getAttribute("usuario");  
 %>
 <!DOCTYPE html>
 <html>
@@ -19,6 +16,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hola <%out.print(usuario);%> ... Acceso correcto</h1>
+        <h1>Hola <%=usuario.getUsuario()%> ... Acceso correcto</h1>
+        <a href="<%=request.getContextPath()%>/media.html">Media</a>
+        <a href="<%=request.getContextPath()%>/basicdata.html">Basicdata</a>
+        <a href="<%=request.getContextPath()%>/usuario.html">Usuarios</a>
     </body>
 </html>

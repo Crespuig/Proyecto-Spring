@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import project.model.Basicdata;
 import project.model.Media;
+import project.persistencia.dao.BasicdataDAO;
 import project.persistencia.dao.MediaDAO;
 
 /**
@@ -31,8 +32,10 @@ public class MediaController {
 
     @Autowired
     private MediaDAO mediaDAO;
+    @Autowired
+    private BasicdataDAO basicdataDAO;
 
-    @RequestMapping({"/media.html"})
+    @RequestMapping({"/media"})
     public ModelAndView read(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> model = new HashMap<String, Object>();
         String viewName;
@@ -81,7 +84,7 @@ public class MediaController {
         try {
             media = mediaDAO.create();
             media.setUrl(request.getParameter("url"));
-            media.setBasicdata((Basicdata) request.getAttribute("basicdata"));
+            media.setBasicdata(basicdataDAO.get(Integer.parseInt(request.getParameter("idBasicdata"))));
 
             mediaDAO.saveOrUpdate(media);
 

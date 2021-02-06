@@ -5,25 +5,21 @@
 
 <%
     FormOperation formOperation = (FormOperation) request.getAttribute("formOperation");
-    String labelButton = null;
-    String urlAction = null;
-
+    String labelButton = "";
+    String urlAction = "";
     switch (formOperation) {
         case Insert:
             labelButton = "Insertar";
             urlAction = request.getContextPath() + "/usuario/insert.html";
             break;
-        case Update:
-            labelButton = "Actualizar";
-            urlAction = request.getContextPath() + "/usuario/update.html";
+        case Login:
+            labelButton = "Login";
+            urlAction = request.getContextPath() + "/usuario/login.html";
             break;
-        case Delete:
-            labelButton = "Borrar";
-            urlAction = request.getContextPath() + "/usuario/delete.html";
-            break;
-        default:
-            throw new RuntimeException("El valor de 'formOperation' no es valido" + formOperation);
+        
     }
+
+
 %>    
 
 <!DOCTYPE html "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -43,34 +39,37 @@
             </div>
             <div class="col-sm">
                 <h1>Iniciar sesión</h1>
-                <form action="<%=urlAction%>" method="post">
+                <form action="<%=urlAction%>" method="post" id="formInicio">
+
                     <fieldset>
+                        <%
+                            switch (formOperation) {
+                                case Insert:
+                        %>
                         <div class="form-group">
-                                <label class="control-label" for="id">Id:</label>
-                                <input class="form-control disabled " id="id" name="id" type="text" value="${usuario.id}" readonly="readonly">
-                            </div>
-                        <div class="form-group">
-                            <label class="control-label" for="nombre">Usuario:</label>
-                            <input class="form-control" id="usuario" type="text" name="usuario" value="${usuario.usuario}"/><br>
+                            <label class="control-label" for="nombre">Nombre</label>
+                            <input class="form-control" id="txtNombre" type="text" name="nombre" "/><br>
                         </div>
                         <div class="form-group">
-                            <label class="control-label" for="nombre">Nombre:</label>
-                            <input class="form-control" id="nombre" type="text" name="nombre" value="${usuario.nombre}"/><br>
+                            <label class="control-label" for="apellidos">Apellidos:</label>
+                            <input class="form-control" id="txtApellidos" type="text" name="apellidos" "/><br>
                         </div>
+                        <%
+                            }
+                        %>
                         <div class="form-group">
-                            <label class="control-label" for="nombre">Apellidos:</label>
-                            <input class="form-control" id="apellidos" type="text" name="apellidos" value="${usuario.apellidos}"/><br>
+                            <label class="control-label" for="usuario">Usuario:</label>
+                            <input class="form-control" id="txtUsuario" type="text" name="usuario" "/><br>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="password">Contraseña:</label>
-                            <input class="form-control" id="password" type="text" name="password" value="${usuario.password}"/><br>
+                            <input class="form-control" id="txtPassword" type="password" name="password" "/><br>
                         </div>
                     </fieldset>
                     <div class="form-actions">
-                        <button id="aceptarBtn" class="btn btn-primary" type="submit"><%=labelButton%></button>
-                        <a class="btn" href="<%=request.getContextPath()%>/usuario.html" >Cancelar</a>
+                        <input type="submit" value="<%=labelButton%>" id="btnIniciarSesion" />
                     </div>
-
+                    No tienes una cuenta... <a href="<%=request.getContextPath()%>/usuario/newForInsert.html">Registrarme</a>
                 </form>
             </div>
         </div>

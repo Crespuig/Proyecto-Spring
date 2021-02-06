@@ -26,11 +26,11 @@ import project.persistencia.dao.UsuarioDAO;
  */
 @Controller
 public class UsuarioController {
-    
+
     @Autowired
     private UsuarioDAO usuarioDao;
-    
-    @RequestMapping({"/usuario.html"})
+
+    @RequestMapping({"/usuario"})
     public ModelAndView read(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> model = new HashMap<String, Object>();
         String viewName;
@@ -47,7 +47,7 @@ public class UsuarioController {
 
         return new ModelAndView(viewName, model);
     }
-    
+
     @RequestMapping({"/usuario/newForInsert.html"})
     public ModelAndView newForInsert(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> model = new HashMap<String, Object>();
@@ -84,7 +84,8 @@ public class UsuarioController {
 
             usuarioDao.saveOrUpdate(usuario);
 
-            viewName = "redirect:/usuario.html";
+            model.put("formOperation", FormOperation.Login);
+            viewName = "usuario";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
             model.put("backURL", request.getContextPath() + "/index.html");
@@ -92,7 +93,7 @@ public class UsuarioController {
         }
         return new ModelAndView(viewName, model);
     }
-    
+
     @RequestMapping({"/usuario/readForUpdate.html"})
     public ModelAndView readForUpdate(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> model = new HashMap<String, Object>();
@@ -149,7 +150,7 @@ public class UsuarioController {
         }
         return new ModelAndView(viewName, model);
     }
-    
+
     @RequestMapping({"/usuario/readForDelete.html"})
     public ModelAndView readForDelete(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> model = new HashMap<String, Object>();
@@ -204,4 +205,54 @@ public class UsuarioController {
         return new ModelAndView(viewName, model);
     }
     
+    
+    @RequestMapping({"/index.html"})
+    public ModelAndView loginForm(HttpServletRequest request, HttpServletResponse response) {
+        Map<String, Object> model = new HashMap<String, Object>();
+        String viewName;
+
+        viewName = "usuario";
+        model.put("formOperation", FormOperation.Login);
+
+        return new ModelAndView(viewName, model);
+    }
+
+    @RequestMapping({"/usuario/login"})
+    public ModelAndView login(HttpServletRequest request, HttpServletResponse response) {
+        Map<String, Object> model = new HashMap<String, Object>();
+        String viewName;
+
+        try {
+            String us, password;
+            try {
+                us = request.getParameter("usuario");
+                password = request.getParameter("password");
+            } catch (NumberFormatException e) {
+                throw new BussinessException(new BussinessMessage(null, "Ya no existe el usuario a borrar"));
+            }
+
+            Usuario usuario = null;
+            List<Usuario> usuarios = usuarioDao.findAll();
+
+            for (Usuario u : usuarios) {
+                if (u.getUsuario().contentEquals(us) && u.getPassword().contentEquals(password)) {
+                    usuario = u;
+                }
+            }
+            if (usuario != null) {
+                model.put("usuario", usuario);
+                viewName = "menu";
+            } else {
+                model.put("formOperation", FormOperation.Login);
+                viewName = "usuario";
+            }
+
+        } catch (BussinessException ex) {
+            model.put("bussinessMessages", ex.getBussinessMessages());
+            model.put("backURL", request.getContextPath() + "/index.html");
+            viewName = "error";
+        }
+        return new ModelAndView(viewName, model);
+    }
+
 }
