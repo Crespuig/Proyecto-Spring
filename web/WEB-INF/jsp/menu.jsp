@@ -16,7 +16,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hola <%=usuario.getUsuario()%> ... Acceso correcto</h1>
+        <h1>Hola <%=usuario.getUsuario()%></h1>
         <a href="<%=request.getContextPath()%>/media.html">Media</a>
         <a href="<%=request.getContextPath()%>/basicdata.html">Basicdata</a>
         <a href="<%=request.getContextPath()%>/usuario.html">Usuarios</a>

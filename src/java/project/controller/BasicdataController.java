@@ -19,6 +19,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import project.model.Basicdata;
+import project.model.Media;
+import project.persistencia.dao.MediaDAO;
 
 /**
  *
@@ -30,6 +32,8 @@ public class BasicdataController {
 
     @Autowired
     private BasicdataDAO basicdataDAO;
+    @Autowired
+    private MediaDAO mediaDao;
 
     @RequestMapping({"/basicdata"})
     public ModelAndView read(HttpServletRequest request, HttpServletResponse response) {
@@ -39,7 +43,9 @@ public class BasicdataController {
 
         try {
             List<Basicdata> basicdatas = basicdataDAO.findAll();
+            List<Media> medias = mediaDao.findAll();
             model.put("basicdatas", basicdatas);
+            model.put("medias", medias);
             viewName = "basicdataListado";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());

@@ -47,6 +47,8 @@ public class UsuarioController {
 
         return new ModelAndView(viewName, model);
     }
+    
+    
 
     @RequestMapping({"/usuario/newForInsert.html"})
     public ModelAndView newForInsert(HttpServletRequest request, HttpServletResponse response) {
@@ -85,7 +87,7 @@ public class UsuarioController {
             usuarioDao.saveOrUpdate(usuario);
 
             model.put("formOperation", FormOperation.Login);
-            viewName = "usuario";
+            viewName = "redirect:/usuario.html";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
             model.put("backURL", request.getContextPath() + "/index.html");
@@ -110,7 +112,7 @@ public class UsuarioController {
             }
             model.put("formOperation", FormOperation.Update);
             model.put("usuario", usuario);
-            viewName = "usuario";
+            viewName = "gestionarUsuario";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
             model.put("backURL", request.getContextPath() + "/index.html");
@@ -167,7 +169,7 @@ public class UsuarioController {
             }
             model.put("formOperation", FormOperation.Delete);
             model.put("usuario", usuario);
-            viewName = "usuario";
+            viewName = "gestionarUsuario";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
             model.put("backURL", request.getContextPath() + "/index.html");

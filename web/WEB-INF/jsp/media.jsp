@@ -65,7 +65,7 @@
 
                         <div class="form-actions">
                             <button id="aceptarBtn" class="btn btn-primary" type="submit"><%=labelButton%></button>
-                            <a class="btn" href="<%=request.getContextPath()%>/index.html" >Cancelar</a>
+                            <a class="btn" href="<%=request.getContextPath()%>/media.html" >Cancelar</a>
                         </div>
                     </form>
                 </div>

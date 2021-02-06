@@ -1,9 +1,12 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="project.model.Media"%>
 <%@page import="project.model.Basicdata"%>
 <%@page import="org.springframework.web.util.HtmlUtils"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     List<Basicdata> basicdatas = (List<Basicdata>) request.getAttribute("basicdatas");
+    List<Media> medias = (List<Media>) request.getAttribute("medias");
 %>
 
 <!DOCTYPE html>
@@ -44,15 +47,56 @@
                                 </thead>
                                 <tbody>
                                     <%
+                                        int i = 1;
+                                        String id = "", href = "";
                                         for (Basicdata basicdata : basicdatas) {
+                                            ArrayList<Media> mediasLista = new ArrayList<>();
+                                            for (Media m : medias) {
+                                                if (m.getBasicdata().getIdBasicData() == basicdata.getIdBasicData()) {
+                                                    mediasLista.add(m);
+                                                }
+                                            }
+                                            id = "accordion" + i;
+                                            href = "collapse" + i;
+                                            i++;
                                     %>
-                                    <tr>
+
+                                    <tr class="accordion-toggle collapsed" id="<%=id%>" data-toggle="collapse" data-parent="#<%=id%>" href="#<%=href%>">
                                         <td><a href="<%=request.getContextPath()%>/basicdata/readForUpdate.html?id=<%=basicdata.getIdBasicData()%>" title="Editar"><%=basicdata.getIdBasicData()%></a></td>
                                         <td><%=HtmlUtils.htmlEscape(basicdata.getLanguage())%></td>
                                         <td><%=HtmlUtils.htmlEscape(basicdata.getPhone())%></td>
                                         <td><%=HtmlUtils.htmlEscape(basicdata.getWeb())%></td>
                                         <td>
                                             <a href="<%=request.getContextPath()%>/basicdata/readForDelete.html?id=<%=basicdata.getIdBasicData()%>" title="Borrar" ><i class="bi bi-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <!-- Es crea una tr per a posarli dins la tabla de films de cada director -->
+                                    <tr style="padding:0px;">
+                                        <td colspan="5" style="padding:0px;">
+                                            <!-- Es crea la tabla oculta (important la clase collapse in p-3 i el id generat antes en el for)-->
+                                            <table id="<%=href%>" class="collapse in p-3 table table-bordered table-hover table-condensed">
+                                                <thead>
+                                                    <tr>
+                                                        <th>IdMedia</th>
+                                                        <th>Url</th>
+                                                        <th>Borrar</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <!-- Per cada film es crea una row en la tabla -->
+                                                    <%
+                                                        for (Media m : mediasLista) {
+                                                    %>
+                                                    <tr>
+
+                                                        <td><a href="<%=request.getContextPath()%>/media/readForUpdate.html?id=<%=m.getIdMedia()%>" title="Editar" ><%=m.getIdMedia()%></a></td>
+                                                        <td><%=m.getUrl()%></td>
+                                                        <td>
+                                                            <a href="<%=request.getContextPath()%>/media/readForDelete.html?id=<%=m.getIdMedia()%>" title="Borrar" ><i class="bi bi-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <%}%>
+                                            </table>
                                         </td>
                                     </tr>
                                     <%
