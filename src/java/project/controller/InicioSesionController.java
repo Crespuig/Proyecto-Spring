@@ -27,30 +27,40 @@ import project.persistencia.dao.UsuarioDAO;
 @MultipartConfig
 @Controller
 public class InicioSesionController {
-    
+
     @Autowired
     private UsuarioDAO usuarioDao;
-    
-   @RequestMapping({"/index.html"})
-    protected void  proccesRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException {
+
+    @RequestMapping({"/inicio.html"})
+    protected ModelAndView proccesRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
+        Map<String, Object> model = new HashMap<String, Object>();
+        String viewName;
+
         PrintWriter out = response.getWriter();
-        
-        String usuario = request.getParameter("usuario");
-        String password = request.getParameter("password");
-        
-        Consultas consultas = new Consultas();
-        if (consultas.autentication(usuario, password)) {
-            HttpSession objSession = request.getSession(true);
-            objSession.setAttribute("usuario", usuario);
-            
-            response.sendRedirect("menu.jsp");
-        }else{
-            response.sendRedirect("index.jsp");
+
+        try {
+            String usuario = request.getParameter("usuario");
+            String password = request.getParameter("password");
+
+            viewName = "inicio";
+
+            Consultas consultas = new Consultas();
+            if (consultas.autentication(usuario, password)) {
+                HttpSession objSession = request.getSession(true);
+                objSession.setAttribute("usuario", usuario);
+
+                response.sendRedirect("menu.jsp");
+            } else {
+                response.sendRedirect("index.jsp");
+            }
+        } catch (IOException | SQLException e) {
+            model.put("backURL", request.getContextPath() + "/index.html");
+            viewName = "error";
         }
-        
-        
+        return new ModelAndView(viewName, model);
+
     }
-    
+
 }

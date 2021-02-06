@@ -42,7 +42,7 @@
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="password">Contraseña:</label>
-                            <input class="form-control" id="password" type="text" name="password" value="${usuario.password}"/><br>
+                            <input class="form-control" id="password" type="password" name="password" value="${usuario.password}"/><br>
                         </div>
                     </fieldset>
                     <div class="form-actions">
