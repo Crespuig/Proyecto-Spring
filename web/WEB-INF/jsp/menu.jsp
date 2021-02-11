@@ -18,6 +18,18 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <style>
+            #divSaludaUsuario{
+                margin-top: 300px;
+            }
+            #imgMenu{
+                margin-top: 50px;
+                width: 300px;    
+                margin-right: 10px;
+            } 
+        </style>
+
         <title>JSP Page</title>
     </head>
     <body style="background:#BDBDBD">
@@ -38,8 +50,13 @@
             </div>
         </nav>
 
+        <div class="row justify-content-center" id="divSaludaUsuario">
+            <h1>Hola <%=usuario.getUsuario()%></h1><br>
+        </div>
+        <div class="row justify-content-center" id="diImgMenu">
+            <image src="https://miro.medium.com/max/2400/1*PKXC0FeXQc5LVmqhJ8HnVg.png" id="imgMenu"/>
+        </div>
 
-        <h1>Hola <%=usuario.getUsuario()%></h1>
-        
+
     </body>
 </html>

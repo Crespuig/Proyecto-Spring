@@ -46,7 +46,7 @@
                         </div>
                     </fieldset>
                     <div class="form-actions">
-                        <input type="submit" value="Registrarme"/>
+                        <input type="submit" href="<%=request.getContextPath()%>/usuario/login.html" value="Registrarme"/>
                     </div>
  
                 </form>
