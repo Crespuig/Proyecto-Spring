@@ -87,7 +87,7 @@ public class UsuarioController {
             usuarioDao.saveOrUpdate(usuario);
 
             model.put("formOperation", FormOperation.Login);
-            viewName = "redirect:/index.html";
+            viewName = "redirect:/usuario/loginForm.html";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
             model.put("backURL", request.getContextPath() + "/index.html");
