@@ -35,9 +35,10 @@
                 height: 100%;
             }
             #carouselExampleIndicators{
-                margin-top: 80px;
+                
                 width: 800px;
-                margin-left: 575px;
+                margin: 0 auto;
+                margin-top: 80px;
             }
             img{
                 width: 800px;

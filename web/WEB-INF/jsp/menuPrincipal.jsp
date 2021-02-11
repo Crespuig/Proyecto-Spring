@@ -26,7 +26,7 @@
             
             #carouselExampleControls{
                 width: 800px;
-                margin-left: 575px;
+                margin: 0 auto;
             }
             img{
                 width: 800px;
