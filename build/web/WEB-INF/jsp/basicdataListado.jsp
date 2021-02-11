@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="<%=request.getContextPath()%>/index.html" >Home</a>
+                    <a class="navbar-brand" href="#">Home</a>
                 </li>
             </ul>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">

@@ -40,6 +40,7 @@
                     <a class="nav-link" href="<%=request.getContextPath()%>/usuario/loginForm.html">Iniciar sesión</a>
                 </li>
             </ul>
+            <!--    
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
@@ -53,6 +54,7 @@
                     </li>
                 </ul>
             </div>
+            -->
         </nav>
         <div class="row justify-content-center" id="diImgMenu">
             <image src="https://st3.idealista.com/cms/archivos/styles/idcms_social_large_desktop/public/2018-06/news/madrid%20gtres.jpg?fv=reFMJ_Db&itok=OvwtMOLC" id="imgMenu"/>

@@ -243,7 +243,7 @@ public class UsuarioController {
             }
             if (usuario != null) {
                 model.put("usuario", usuario);
-                viewName = "menu";
+                viewName = "menuPrincipal";
             } else {
                 model.put("formOperation", FormOperation.Login);
                 viewName = "menu";
