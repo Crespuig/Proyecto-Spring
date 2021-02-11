@@ -45,6 +45,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<%=request.getContextPath()%>/usuario.html">Usuarios <span class="sr-only">(current)</span></a>
                     </li>
+
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="ml-auto">
+                        <a class="nav-link" href="<%=request.getContextPath()%>/index.html">Cerrar sesión <span class="sr-only">(current)</span></a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -61,7 +67,7 @@
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
                 Created by: Héctor Crespo Puig
-               
+
             </div>
             <!-- Copyright -->
         </footer>

@@ -59,11 +59,20 @@
         <div class="row justify-content-center" id="diImgMenu">
             <image src="https://st3.idealista.com/cms/archivos/styles/idcms_social_large_desktop/public/2018-06/news/madrid%20gtres.jpg?fv=reFMJ_Db&itok=OvwtMOLC" id="imgMenu"/>
         </div>
-        <!--
-        <div class="row justify-content-center" id="divSaludaUsuario">
-            <h1>Hola <%/*=usuario.getUsuario()*/%></h1><br>
-        </div>
-        -->
+        <footer class="bg-light text-center text-lg-start">
+            <!-- Grid container -->
+            <div>
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+                Created by: Héctor Crespo Puig
+
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
 
 
     </body>
