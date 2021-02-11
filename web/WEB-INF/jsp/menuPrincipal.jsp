@@ -19,19 +19,24 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style>
-            footer{
-                position:absolute;
-                bottom:0;
-                width: 100%;
-                height: 10px;
-            }
+            
             #usuarioMenu{
-                margin-top: 400px;
+                margin-top: 30px;
             }
+            
+            #carouselExampleControls{
+                width: 800px;
+                margin-left: 575px;
+            }
+            img{
+                width: 800px;
+                height: 500px;
+            }
+
         </style>
         <title>JSP Page</title>
     </head>
-    <body style="background:#BDBDBD">
+    <body style="background-image: url('https://www.solofondos.com/wp-content/uploads/2015/11/new-fondo1lateral.jpg')">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">Home</a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -56,23 +61,37 @@
         </nav>
 
 
-        <h1 class="row justify-content-center" id="usuarioMenu">Hola <%=usuario.getUsuario()%></h1>
+        <h1 class="row justify-content-center text-light" id="usuarioMenu" style="font-family: monospace">
+            Bienvenido/a <%=usuario.getUsuario()%>
+        </h1>
 
-        <footer class="bg-light text-center text-lg-start">
-            <!-- Grid container -->
-            <div>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="https://dondealojarseen.com/wp-content/uploads/2019/07/Gran-Meli%C3%A1-Palacio-de-los-Duques-hoteles-de-lujo-en-madrid.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="https://ep01.epimg.net/elviajero/imagenes/2018/08/23/actualidad/1535034023_735600_1535034763_noticia_normal_recorte1.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="https://static3.abc.es/media/viajar/2019/06/17/Aloft-azotea-k0tG--620x349@abc.jpg" alt="Third slide">
+                </div>
             </div>
-            <!-- Grid container -->
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
 
-            <!-- Copyright -->
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-                Created by: Héctor Crespo Puig
-
-            </div>
-            <!-- Copyright -->
-        </footer>
-        <!-- Footer -->
     </body>
 
-
+    <footer class="bg-dark text-center text-lg-start fixed-bottom">
+        <div class="text-center p-3 text-light" style="background-color: rgba(0, 0, 0, 0.2)" >
+            <p>Created by: Héctor Crespo Puig</p>
+        </div>
+    </footer>
 </html>

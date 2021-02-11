@@ -35,7 +35,7 @@
         <script type="text/javascript"  src="<%=request.getContextPath()%>/js/bootstrap.js" ></script>
         <title>Iniciar sesión</title>
     </head>
-    <body style="background:#FDFDFD">
+    <body style="background-image: url('https://www.solofondos.com/wp-content/uploads/2015/11/new-fondo1lateral.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-sm">&nbsp;</div>

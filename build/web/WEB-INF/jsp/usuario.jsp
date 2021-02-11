@@ -33,12 +33,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style>
-            footer{
-                position:absolute;
-                bottom:0;
-                width: 100%;
-                height: 10px;
-            }
+            
             #formInicio{
                 background: white;
                 border-radius: 10px;
@@ -48,17 +43,37 @@
         </style>
         <title>Iniciar sesión</title>
     </head>
-    <body style="background:#BDBDBD">
+    <body style="background-image: url('https://www.solofondos.com/wp-content/uploads/2015/11/new-fondo1lateral.jpg')">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="<%=request.getContextPath()%>/index.html">Home</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
                 </li>
             </ul>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <%
+                    switch (formOperation) {
+                        case Insert:
+                %>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%=request.getContextPath()%>/basicdata.html">BasicData <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%=request.getContextPath()%>/media.html">Media <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="<%=request.getContextPath()%>/usuario.html">Usuarios <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                <%
+                    }
+                %>
+            </div>
         </nav>
         <div class="container">
 
-            <h1 class="row justify-content-center">Iniciar sesión</h1>
+            <h1 class="row justify-content-center text-light" style="font-family: monospace">Iniciar sesión</h1>
 
             <div class="container col-lg-3">
                 <form action="<%=urlAction%>" method="post" id="formInicio">
@@ -95,19 +110,11 @@
                 </form>
             </div>
         </div>
-        <footer class="bg-light text-center text-lg-start">
-            <!-- Grid container -->
-            <div>
-            </div>
-            <!-- Grid container -->
-
-            <!-- Copyright -->
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-                Created by: Héctor Crespo Puig
-
-            </div>
-            <!-- Copyright -->
-        </footer>
-        <!-- Footer -->
+      
     </body>
+    <footer class="bg-dark text-center text-lg-start fixed-bottom">
+        <div class="text-center p-3 text-light" style="background-color: rgba(0, 0, 0, 0.2)" >
+            <p>Created by: Héctor Crespo Puig</p>
+        </div>
+    </footer>
 </html>

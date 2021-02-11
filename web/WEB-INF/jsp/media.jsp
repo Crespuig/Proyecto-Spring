@@ -36,23 +36,20 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style>
-            footer{
-                position:absolute;
-                bottom:0;
-                width: 100%;
-                height: 10px;
-            }
-            #form{
+            
+            #formInicio{
                 background: white;
                 border-radius: 10px;
+                width: 100%;
+                padding: 10px;
             }
         </style>
     </head>
-    <body style="background:#BDBDBD">
+    <body style="background-image: url('https://www.solofondos.com/wp-content/uploads/2015/11/new-fondo1lateral.jpg')">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="<%=request.getContextPath()%>/index.html">Home</a>
+                <a class="nav-link" href="#">Home</a>
             </li>
         </ul>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -75,8 +72,8 @@
         </div>
         <div class="row">
             <div class="col-sm">
-                <h3>Media</h3>
-                <form action="<%=urlAction%>" method="post" >
+                <h3><%=labelButton%> Media</h3>
+                <form action="<%=urlAction%>" method="post" id="formInicio">
                     <fieldset>
                         <div class="form-group">
                             <label class="control-label" for="idMedia">IdMedia:</label>
@@ -104,19 +101,11 @@
             </div>
         </div>
     </div>
-    <footer class="bg-light text-center text-lg-start">
-        <!-- Grid container -->
-        <div>
-        </div>
-        <!-- Grid container -->
 
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-            Created by: Héctor Crespo Puig
-
-        </div>
-        <!-- Copyright -->
-    </footer>
-    <!-- Footer -->
 </body>
+<footer class="bg-dark text-center text-lg-start fixed-bottom">
+    <div class="text-center p-3 text-light" style="background-color: rgba(0, 0, 0, 0.2)" >
+        <p>Created by: Héctor Crespo Puig</p>
+    </div>
+</footer>
 </html>

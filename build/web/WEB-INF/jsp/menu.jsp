@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : menu
     Created on : 06-feb-2021, 11:26:15
     Author     : HECTOR
@@ -7,7 +7,7 @@
 <%@page import="project.model.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-   // Usuario usuario = (Usuario) request.getAttribute("usuario");
+    // Usuario usuario = (Usuario) request.getAttribute("usuario");
 %>
 <!DOCTYPE html>
 <html>
@@ -20,60 +20,81 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <style>
-            #divSaludaUsuario{
+            #divBody{
+                width: 500px;
+                height: 500px;
+                background-color: white;
+                margin-left: 675px;
+                margin-top: 200px;
+            }
+            #divImg{
+                background-size: cover; 
             }
             #imgMenu{
-                width: 100%;   
+                width: 100%;
                 height: 100%;
             }
-            body{
-                
+            #carouselExampleIndicators{
+                margin-top: 80px;
+                width: 800px;
+                margin-left: 575px;
             }
+            img{
+                width: 800px;
+                height: 500px;
+            }
+            h1{
+                margin-top: 20px;
+            }
+            
+
+
         </style>
 
         <title>JSP Page</title>
     </head>
-    <body style="background:#BDBDBD">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <body id="divImg" style="background-image: url('https://www.solofondos.com/wp-content/uploads/2015/11/new-fondo1lateral.jpg')">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="<%=request.getContextPath()%>/usuario/loginForm.html">Iniciar sesión</a>
                 </li>
             </ul>
-            <!--    
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link hidden" href="<%=request.getContextPath()%>/basicdata.html" >BasicData <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link hidden" href="<%=request.getContextPath()%>/media.html">Media <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link hidden" href="<%=request.getContextPath()%>/usuario.html">Usuarios <span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-            </div>
-            -->
         </nav>
-        <div class="row justify-content-center" id="diImgMenu">
-            <image src="https://st3.idealista.com/cms/archivos/styles/idcms_social_large_desktop/public/2018-06/news/madrid%20gtres.jpg?fv=reFMJ_Db&itok=OvwtMOLC" id="imgMenu"/>
+        <h1 class="row justify-content-center text-light" style="font-family: monospace">
+            Hoteles de Madrid
+        </h1>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner justify-content-center">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="https://static-new.lhw.com/HotelImages/Final/LW1447/lw1447_101448962_720x450.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="https://imagenes.20minutos.es/files/image_656_370/uploads/imagenes/2020/03/19/el-hotel-ayre-gran-hotel-colon-de-madrid-sera-el-primero-medicalizado-para-el-coronavirus.jpeg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="https://pix10.agoda.net/hotelImages/875/87509/87509_15060520050028733140.jpg?s=1024x768" alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-        <footer class="bg-light text-center text-lg-start">
-            <!-- Grid container -->
-            <div>
-            </div>
-            <!-- Grid container -->
-
-            <!-- Copyright -->
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-                Created by: Héctor Crespo Puig
-
-            </div>
-            <!-- Copyright -->
-        </footer>
-        <!-- Footer -->
-
-
     </body>
+    <footer class="bg-dark text-center text-lg-start fixed-bottom">
+        <div class="text-center p-3 text-light" style="background-color: rgba(0, 0, 0, 0.2)" >
+            <p>Created by: Héctor Crespo Puig</p>
+        </div>
+    </footer>
+
 </html>
