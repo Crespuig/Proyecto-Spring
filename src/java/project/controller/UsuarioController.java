@@ -87,7 +87,7 @@ public class UsuarioController {
             usuarioDao.saveOrUpdate(usuario);
 
             model.put("formOperation", FormOperation.Login);
-            viewName = "redirect:/usuario.html";
+            viewName = "redirect:/index.html";
         } catch (BussinessException ex) {
             model.put("bussinessMessages", ex.getBussinessMessages());
             model.put("backURL", request.getContextPath() + "/index.html");
@@ -208,7 +208,7 @@ public class UsuarioController {
     }
     
     
-    @RequestMapping({"/index.html"})
+    @RequestMapping({"/usuario/loginForm"})
     public ModelAndView loginForm(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> model = new HashMap<String, Object>();
         String viewName;
@@ -257,4 +257,14 @@ public class UsuarioController {
         return new ModelAndView(viewName, model);
     }
 
+    @RequestMapping({"/index.html"})
+    public ModelAndView menu(HttpServletRequest request, HttpServletResponse response) {
+        Map<String, Object> model = new HashMap<String, Object>();
+        String viewName;
+
+        viewName = "menu";
+
+        
+        return new ModelAndView(viewName, model);
+    }
 }

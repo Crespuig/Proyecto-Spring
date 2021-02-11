@@ -7,7 +7,7 @@
 <%@page import="project.model.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    Usuario usuario = (Usuario) request.getAttribute("usuario");
+   // Usuario usuario = (Usuario) request.getAttribute("usuario");
 %>
 <!DOCTYPE html>
 <html>
@@ -24,8 +24,11 @@
             }
             #imgMenu{
                 width: 100%;   
-                height: 750px;
-            } 
+                height: 100%;
+            }
+            body{
+                
+            }
         </style>
 
         <title>JSP Page</title>
@@ -34,13 +37,13 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="<%=request.getContextPath()%>/index.html">Home</a>
+                    <a class="nav-link" href="<%=request.getContextPath()%>/usuario/loginForm.html">Iniciar sesión</a>
                 </li>
             </ul>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link hidden" href="<%=request.getContextPath()%>/basicdata.html">BasicData <span class="sr-only">(current)</span></a>
+                        <a class="nav-link hidden" href="<%=request.getContextPath()%>/basicdata.html" >BasicData <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link hidden" href="<%=request.getContextPath()%>/media.html">Media <span class="sr-only">(current)</span></a>
@@ -54,10 +57,11 @@
         <div class="row justify-content-center" id="diImgMenu">
             <image src="https://st3.idealista.com/cms/archivos/styles/idcms_social_large_desktop/public/2018-06/news/madrid%20gtres.jpg?fv=reFMJ_Db&itok=OvwtMOLC" id="imgMenu"/>
         </div>
+        <!--
         <div class="row justify-content-center" id="divSaludaUsuario">
-            <h1>Hola <%=usuario.getUsuario()%></h1><br>
+            <h1>Hola <%/*=usuario.getUsuario()*/%></h1><br>
         </div>
-
+        -->
 
 
     </body>
