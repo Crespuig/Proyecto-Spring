@@ -21,12 +21,10 @@
 
         <style>
             #divSaludaUsuario{
-                margin-top: 300px;
             }
             #imgMenu{
-                margin-top: 50px;
-                width: 300px;    
-                margin-right: 10px;
+                width: 100%;   
+                height: 750px;
             } 
         </style>
 
@@ -34,28 +32,32 @@
     </head>
     <body style="background:#BDBDBD">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Home</a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="<%=request.getContextPath()%>/index.html">Home</a>
+                </li>
+            </ul>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="<%=request.getContextPath()%>/basicdata.html">BasicData <span class="sr-only">(current)</span></a>
+                        <a class="nav-link hidden" href="<%=request.getContextPath()%>/basicdata.html">BasicData <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<%=request.getContextPath()%>/media.html">Media <span class="sr-only">(current)</span></a>
+                        <a class="nav-link hidden" href="<%=request.getContextPath()%>/media.html">Media <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<%=request.getContextPath()%>/usuario.html">Usuarios <span class="sr-only">(current)</span></a>
+                        <a class="nav-link hidden" href="<%=request.getContextPath()%>/usuario.html">Usuarios <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
         </nav>
-
+        <div class="row justify-content-center" id="diImgMenu">
+            <image src="https://st3.idealista.com/cms/archivos/styles/idcms_social_large_desktop/public/2018-06/news/madrid%20gtres.jpg?fv=reFMJ_Db&itok=OvwtMOLC" id="imgMenu"/>
+        </div>
         <div class="row justify-content-center" id="divSaludaUsuario">
             <h1>Hola <%=usuario.getUsuario()%></h1><br>
         </div>
-        <div class="row justify-content-center" id="diImgMenu">
-            <image src="https://miro.medium.com/max/2400/1*PKXC0FeXQc5LVmqhJ8HnVg.png" id="imgMenu"/>
-        </div>
+
 
 
     </body>

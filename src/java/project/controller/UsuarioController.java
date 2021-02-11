@@ -246,7 +246,7 @@ public class UsuarioController {
                 viewName = "menu";
             } else {
                 model.put("formOperation", FormOperation.Login);
-                viewName = "usuario";
+                viewName = "menu";
             }
 
         } catch (BussinessException ex) {
