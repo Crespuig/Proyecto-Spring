@@ -35,11 +35,13 @@
         <style>
             
             #formInicio{
-                background: white;
+                background: #90a4ae;
                 border-radius: 10px;
                 width: 100%;
                 padding: 10px;
             }
+            	
+
         </style>
         <title>Iniciar sesión</title>
     </head>

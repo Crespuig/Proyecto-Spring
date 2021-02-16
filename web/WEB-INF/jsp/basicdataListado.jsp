@@ -24,7 +24,7 @@
             
         </style>
     </head>
-    <body style="background-image: url('https://www.solofondos.com/wp-content/uploads/2015/11/new-fondo1lateral.jpg')">
+    <body style="">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
